@@ -1,0 +1,25 @@
+name: Publish Package to npmjs
+on:
+  release:
+    types: [published]
+  workflow_run:
+    workflows: ["Publish release", "Publish release (manual)"]
+    types:
+      - completed
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: npm ci
+      - run: npx publish-if-not-exists --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

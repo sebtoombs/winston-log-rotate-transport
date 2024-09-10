@@ -1,0 +1,66 @@
+{
+  "name": "winston-log-rotate",
+  "version": "0.0.0",
+  "description": "A Transport for Winston which logs to a rotating file.",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "default": "./dist/index.js"
+  },
+  "author": "sebtoombs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebtoombs/winston-log-rotate-transport.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup-node",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "version": "./scripts/version.sh",
+    "test": "vitest",
+    "test:ci": "vitest run"
+  },
+  "dependencies": {
+    "file-stream-rotator": "^1.0.0",
+    "triple-beam": "^1.4.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@types/node": "^22.5.4",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-unicorn": "^55.0.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.4.0",
+    "vite": "^5.4.3",
+    "vitest": "^2.0.5",
+    "winston": "^3.14.2"
+  },
+  "peerDependencies": {
+    "winston": "*"
+  },
+  "peerDependenciesMeta": {
+    "winston": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "winston",
+    "logrotate",
+    "transport",
+    "daily-rotate-file",
+    "log-rotate"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ]
+}
