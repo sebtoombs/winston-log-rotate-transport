@@ -1,5 +1,5 @@
 {
-  "name": "winston-log-rotate",
+  "name": "winston-log-rotate-transport",
   "version": "0.0.0",
   "description": "A Transport for Winston which logs to a rotating file.",
   "type": "module",

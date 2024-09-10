@@ -16,7 +16,7 @@ Add to your winston logger
 
 ```js
 import winston from "winston";
-import { LogRotateTransport } from "winston-log-rotate";
+import { LogRotateTransport } from "winston-log-rotate-transport";
 
 const logger = winston.createLogger({
   transports: [
@@ -51,16 +51,16 @@ The `filename`, `extension`, `frequency`, and `date_format` option defaults are 
 
 Use this plugin if you use Winston and you want to rotate your logs.
 
-#### winston-log-rotate vs winston-daily-rotate-file
+#### winston-log-rotate-transport vs winston-daily-rotate-file
 
-`winston-daily-rotate-file` is a popular choice for rotating logs with Winston. `winston-log-rotate` is a similar transport, which also uses `file-stream-rotator` under the hood. The main difference is that `winston-log-rotate` allows for more flexibility in log rotation, and is less opinionated. Additionally, `winston-log-rotate` is a newer package, and uses `v1` of `file-stream-rotator`. This is especially useful if you'd like to rotate log files manually at any point.
+`winston-daily-rotate-file` is a popular choice for rotating logs with Winston. `winston-log-rotate-transport` is a similar transport, which also uses `file-stream-rotator` under the hood. The main difference is that `winston-log-rotate-transport` allows for more flexibility in log rotation, and is less opinionated. Additionally, `winston-log-rotate-transport` is a newer package, and uses `v1` of `file-stream-rotator`. This is especially useful if you'd like to rotate log files manually at any point.
 
 #### Can I manually rotate log files?
 
 Yes! `file-stream-rotator` v1 offers this method and it is also available via a convenience method on the transport.
 
 ```js
-import { LogRotateTransport } from "winston-log-rotate";
+import { LogRotateTransport } from "winston-log-rotate-transport";
 
 const transport = new LogRotateTransport({
   filename: "app-%DATE%",
