@@ -30,15 +30,16 @@ function log(transport, level, message) {
   });
 }
 
-function close(transport) {
-  return new Promise<void>((resolve) => {
-    transport.once("close", () => {
-      resolve();
-    });
-    transport.close();
-    vi.runAllTimers();
-  });
-}
+// Unused
+// function close(transport) {
+//   return new Promise<void>((resolve) => {
+//     transport.once("close", () => {
+//       resolve();
+//     });
+//     transport.close();
+//     vi.runAllTimers();
+//   });
+// }
 
 function rotate(transport, force = false) {
   return new Promise<void>((resolve) => {
