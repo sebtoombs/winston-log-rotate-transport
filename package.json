@@ -1,6 +1,6 @@
 {
   "name": "winston-log-rotate-transport",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "A Transport for Winston which logs to a rotating file.",
   "type": "module",
   "main": "dist/index.js",
@@ -21,7 +21,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "version": "./scripts/version.sh",
+    "version": "0.0.2",
     "test": "vitest",
     "test:ci": "vitest run"
   },
